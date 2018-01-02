@@ -1,0 +1,41 @@
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#list {
+    position: relative;
+}
+
+#list > li {
+    margin: 25px 20px;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    width: 300px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 5px #ccc;
+    -moz-box-shadow: 0 0 5px #ccc;
+    box-shadow: 0 0 5px #ccc;
+    -webkit-transition: ease 0.2s;
+    -moz-transition: ease 0.2s;
+    -ms-transition: ease 0.2s;
+    -o-transition: ease 0.2s;
+    transition: ease 0.2s;
+    list-style: none;
+}
+
+#list img {
+    width: 300px;
+    height: inherit;
+}
+
+#list > li:hover {
+    transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+}

@@ -1,0 +1,16 @@
+{
+  "name": "test-case",
+  "version": "1.0.0",
+  "description": "test case",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "violet_qqy",
+  "license": "ISC",
+  "dependencies": {
+    "istanbul": "^0.4.1",
+    "mocha": "^2.3.4",
+    "should": "^7.1.1"
+  }
+}

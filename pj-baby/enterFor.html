@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang = "en">
+<html>
+<head>
+	<meta http-equiv = "Content-Type" content = "text/html; charset=UTF-8">
+	<meta content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name = "viewport">
+	<meta content = "yes" name = "apple-mobile-web-app-capable">
+	<meta content = "black" name = "apple-mobile-web-app-status-bar-style">
+	<meta content = "telephone=no" name = "format-detection">
+	<meta charset = "utf-8">
+	<title>报名参加</title>
+	<link rel = "stylesheet" href = "css/style.css">
+	<script src = "js/jquery-1.10.2.min.js"></script>
+	<script src = "js/jquery.masonry.min.js"></script>
+	<script src = "js/app.js"></script>
+	<script src = "js/ajaxfileupload.js"></script>
+	<script src = "js/jquery.form.js"></script>
+	<style>
+		.popWindow {
+			display: none;
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			right: 0px;
+			bottom: 0px;
+			background-color: #9D9D9D;
+			-moz-opacity: 0.8;
+			opacity: 0.8;
+			z-index: 900;
+			filter: alpha(opacity=40);
+		}
+
+		.popMessage {
+			display: none;
+			position: absolute;
+			z-index: 10000;
+			border-radius: 10px;
+			margin: 0 auto;
+			border: 1px solid #cad4dd;
+			background-color: #fafafa;
+			width: 90px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+<header>
+	<div class = "m_head clearfix">
+		<img src = "pic/logo.jpg" />
+
+		<div style = "text-align: center;font-size:40px;"></div>
+		<div class = "num_box" style = "color: white;background:rgb(200,220,75)">
+			<ul class = "num_box_ul">
+				<li style = "width: 49%;">
+					<span class = "text" style = "color: white;">投票人次</span>
+					<span style = "color: white;">0</span>
+				</li>
+				<li style = "width: 49%;">
+					<span class = "text" style = "color: white;">访问量</span>
+					<span style = "color: white;">1160099</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+</header>
+<div class = "apply" style = "background: rgb(200,220,75);">
+	<p style = "color: white;">报名处</p>
+
+	<div class = "blank10"></div>
+	<form action = "/active.php/mbb/detail" method = "post" id = "su">
+		<!--<input type = "text" name = "pic" id = "pic" />-->
+		<!--<textarea class = "textarea" name = "pic2" cols = "30" rows = "10" id = "pic2"></textarea>-->
+		<dl class = "clearfix">
+			<dt style = "color: white;">萌宝姓名:</dt>
+			<dd>
+				<input type = "text" class = "input_txt" id = "name" value = "" name = "name" placeholder = "请输入萌宝姓名">
+			</dd>
+		</dl>
+		<dl class = "clearfix">
+			<dt style = "color: white;">萌宝性别:</dt>
+			<dd>
+				<input type = "radio" value = "男" name = "sex" checked = "checked" />男　　
+				<input type = "radio" value = "女" name = "sex" />女
+			</dd>
+		</dl>
+		<dl class = "clearfix">
+			<dt style = "color: white;">萌宝年龄:</dt>
+			<dd>
+				<input type = "text" class = "input_txt" id = "age" value = "" name = "age" placeholder = "请输入萌宝年龄">
+			</dd>
+		</dl>
+		<dl class = "clearfix">
+			<dt style = "color: white;">家长电话:</dt>
+			<dd>
+				<input type = "number" class = "input_txt" value = "" name = "tel" id = "tel" placeholder = "请输入您的真实电话">
+			</dd>
+		</dl>
+		<dl class = "clearfix">
+			<dt style = "color: white;">家长姓名:</dt>
+			<dd>
+				<input type = "text" class = "input_txt" value = "" name = "address" placeholder = "请输入家长姓名">
+			</dd>
+		</dl>
+		<dl class = "upload clearfix">
+			<dt style = "color: white;">上传主照片<br>(最大2M):</dt>
+			<dd class = "upload_area clearfix" style = "width: 50%;">
+				<ul id = "img-list" class = "post_imglist">
+					<li id = "list-img"></li>
+				</ul>
+				<div id = "show" style = "float: left;"></div>
+				<div class = "upload_btn" style = "float: left;" id = "chooseImage"></div>
+			</dd>
+		</dl>
+		<dl class = "upload clearfix">
+			<dt style = "color: white;">上传次照片<br>(最大2M):</dt>
+			<dd class = "upload_area clearfix" style = "width: 70%;">
+				<ul id = "imglist" class = "post_imglist">
+					<li id = "listimg"></li>
+				</ul>
+				<div id = "show2" style = "float: left;"></div>
+				<div class = "upload_btn" style = "float: left;" id = "chooseImage2"></div>
+			</dd>
+		</dl>
+		<dl class = "clearfix">
+			<dt style = "color: white;">参赛宣言:</dt>
+			<dd>
+				<textarea class = "textarea" placeholder = "为宝贝写一句参赛宣言，为TA加油拉票" name = "intro" id = "intro"></textarea>
+			</dd>
+		</dl>
+		<input type = "submit" id = "sss" style = "display: none;" />
+
+		<div class = "btn_box">
+			<input type = "button" class = "button" value = "确认报名" id = "submit" style = "background: rgb(254,202,3);">
+		</div>
+		<div class = "btn_box" style = "margin-top:20px;">
+			<input type = "button" class = "button" value = "返回主页面，查看投票情况"
+			       style = "background: rgb(247,222,113);border-bottom:0;"
+			       onclick = "location.href='/active.php/mbb/index/order/ps'"
+			       style = "background-color:#D7938D;border-bottom:3px solid #DF8383;"></div>
+		<div class = "blank10"></div>
+	</form>
+</div>
+<section class = "rules">
+	<a name = "rule"></a>
+
+	<div class = "text">
+		<span class = "prize">活动介绍：</span>
+
+		<p>
+			只要宝宝生活在上海，0-9岁，那就来参加“上海上海的第一届萌宝大赛”吧！<br /><br />
+
+			iwatch手表、LG手机照片打印机、拍立得、大白等你来抢！<br /><br />
+
+			还能让宝宝登上2016年萌宝台历，幸福一整年！<br /><br />
+
+			别忘了叫上亲朋好友，拿起手机投上一票，人气萌宝就是你！<br /><br />
+
+			刷票一经发现，一律取消资格
+		</p>
+
+		<span class = "prize">参与对象</span>
+
+		<p>
+			14周岁（含）以下儿童<br />
+		</p>
+
+		<span class = "prize">主办单位</span>
+
+		<p>嘉兴19楼、南湖区团委、南湖区少工委<br />
+		</p>
+
+		<span class = "prize">协办单位</span>
+
+		<p>
+			青鸟公益、暖星公益项目（自闭症儿童互助会）、公益商家<br />
+		</p>
+
+		<a name = "awards"><span class = "prize">总排名奖项：</span></a>
+
+		<p>
+			一等奖：1名<br />
+			奖品：iPhone iMac + 健康体检卡1份 + 动物舞会手偶套装1份 + 200元欢唱券1份<br />
+			二等奖：<br /><br />
+			奖品：健康体检卡1份 + 动物舞会手偶套装1份 + 200元欢唱券1份<br />
+			三等奖：<br />
+			奖品：<br /><br />
+			四等奖：<br />
+			奖品：<br /><br />
+			五等奖：<br />
+			奖品：<br /><br />
+			参与奖：凡是参与即可获得大润发提供的飞牛网网上商城20元购物金1张<br />
+		</p>
+
+		<a name = "rule"><span class = "ways">投票方式及规则</span></a>
+
+		<p>
+			关注“嘉兴19楼”公共账号（微信号：jiaxing-19lou），每个微信号每天均可为萌宝投票一次！<br />
+		</p>
+
+		<span class = "ways">注意事项</span>
+
+		<p>
+			禁止刷票，否则取消获奖资格或清票（此条款执行参照以下规则）：<br />
+			（投票符合以下任意一条情况且在活动的任何时间内出现,后台系统自动判定为作弊，将无法获得任何奖品）<br />
+			1、非嘉兴地区的微信用户投票超过当天投票总数的50%；<br />
+			2、无地区显示的微信用户投票超过当天投票总数的30%；<br />
+			3、无头像的微信用户投票超过当天投票总数的20%；<br />
+			4、明显异常情况；
+		</p>
+
+		<p>本活动最终解释权归嘉兴19楼所有，网友可免费参与活动。如不接受本专题所述条款，请勿参与！</p>
+
+		<span class = "ways" style = "color: red;">友情提醒：</span>
+
+		<p style = "color: red;">
+			近期系统后台监测到有个别参赛选手存在刷票行为，工作人员已致电警告并减去了相应票数；如再次发现将清票处理、严重者将直接取消参赛资格！ 请各位家长注意喔！</p>
+
+	</div>
+	<!--奖项-->
+</section>
+<div class = "popWindow"></div>
+<div class = "popMessage"></div>
+<div id = "console"></div>
+<script type = "text/javascript">
+	function ajaxFileUpload() {
+		showMessage(true, '上传中...');
+		$.ajaxFileUpload({
+			url: 'http://www.afeel.net/image.html',
+			secureuri: false,
+			fileElementId: 'fileToUpload',
+			dataType: 'json',
+			type: 'post',
+			data: {
+				encrypts: 'MjQ5NWxZUmRqVE1MSUN4WGlTcWdON0VuVWZPM3FZbkNId0Ixckx0K1hXMUp5anJxNzAzMkVSOHdEbkxCTWlCdGFrZ1ZHOE1kaEJvd1VUMnFObm9GZkFaT0N6Mng5TXBsSFJmczVNN0hzNXZORWh2cQ@3D@3D',
+				'PHPSESSID': 'kun757ba1itvj1lg9f4b224940'
+			},
+			success: function (data) {
+				showMessage(false);
+				if (data.flg < 1) {
+					alert(data.msg);
+				} else {
+					$('#listimg').html('<img src="' + data.msg.imgsrc + data.msg.filepath + '" style="width:48px;height:48px;" />');
+					$('#att_id').attr('value', data.msg.att_id);
+					$('#filepath').attr('value', data.msg.filepath);
+				}
+			},
+			error: function (data, status, e) {
+				showMessage(false);
+				alert('error(' + e + ')');
+			}
+		});
+	}
+
+	function subs() {
+		alert('报名已结束');
+		return false;
+		var name = $('#name').val();
+		var sex = $("input[name='sex']:checked").val();
+		var age = $('#age').val();
+		var tel = $('#tel').val();
+		var intro = $('#intro').val();
+		if (name == '') {
+			alert('请输入萌宝姓名！');
+			return false;
+		}
+		if (age == '') {
+			alert('请输入萌宝年龄！');
+			return false;
+		}
+		if (tel == '') {
+			alert('请输入家长电话！');
+			return false;
+		}
+		if (intro == '') {
+			alert('请输入萌宝介绍！');
+			return false;
+		}
+		return true;
+	}
+	wx.config({
+		debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+		appId: 'wx2571cfcfb0a0f71f', // 必填，公众号的唯一标识
+		timestamp: 1443538813, // 必填，生成签名的时间戳
+		nonceStr: 'io53fvictil2o1a7', // 必填，生成签名的随机串
+		signature: '492e0fb696d13ada9e2906840394aa415bec965c',// 必填，签名，见附录1
+		jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'chooseImage', 'uploadImage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+	});
+
+	var wxInfo = {
+		titleToFriend: '上海萌宝大赛，开始啦！赢iwacth，登上2016年宝宝台历...',
+		titleToArea: '上海萌宝大赛，开始啦！赢iwacth，登上2016年宝宝台历...',
+		descToFriend: '参加就有福利，赢iwacth，登上2016年宝宝台历',
+		link: 'http://active.jx520.com.cn/active.php/mbb/index',
+		imgUrl: 'http://active.jx520.com.cn/pic/logo.jpg'
+	}
+	var setShareToFriend = function () {
+		//分享给朋友
+		wx.onMenuShareAppMessage({
+			title: wxInfo.titleToFriend,
+			desc: wxInfo.descToFriend,
+			link: wxInfo.link,
+			imgUrl: wxInfo.imgUrl,
+			success: function (res) {
+			},
+			cancel: function (res) {
+			},
+			fail: function (res) {
+			}
+		});
+	}
+
+	var setShareToArea = function () {
+		//分享到朋友圈
+		wx.onMenuShareTimeline({
+			title: wxInfo.titleToArea,
+			link: wxInfo.link,
+			imgUrl: wxInfo.imgUrl,
+			success: function (res) {
+			},
+			cancel: function (res) {
+			},
+			fail: function (res) {
+			}
+		});
+	}
+	wx.ready(function () {
+
+		var images = {
+			localId: [],
+			serverId: []
+		};
+		var images2 = {
+			localId: [],
+			serverId: []
+		};
+		document.querySelector('#chooseImage').onclick = function () {
+			wx.chooseImage({
+				success: function (res) {
+					if (res.localIds.length > 1) {
+						alert('只能上传一张图片');
+						return false;
+					}
+					$("#show").html('');
+					for (var i = 0; i < res.localIds.length; i++) {
+						$("#show").append('<img style="width:50px;height:50px;margin:10px;display:inline" src="' + res.localIds[i] + '"  />');
+					}
+					images.localId = res.localIds;
+				}
+			});
+		};
+		document.querySelector('#chooseImage2').onclick = function () {
+			wx.chooseImage({
+				success: function (res) {
+					if (res.localIds.length < 3 || res.localIds.length > 5) {
+						alert('请上传3-5张图片！');
+						return false;
+					}
+					$("#show2").html('');
+					for (var i = 0; i < res.localIds.length; i++) {
+						$("#show2").append('<img style="width:38px;height:38px;margin:1px;display:inline" src="' + res.localIds[i] + '"  />');
+					}
+					images2.localId = res.localIds;
+				}
+			});
+		};
+		// 5.3 上传图片
+		document.querySelector('#submit').onclick = function () {
+			// var bj= subs();
+			// if(!bj){
+			// return false;
+			//  }
+			if (images.localId.length == 0) {
+				alert('请先上传图片');
+				return;
+			}
+			if (images2.localId.length < 3 || images2.localId.length > 5) {
+				alert('请上传3-5张图片');
+				return;
+			}
+			var i = 0, length = images.localId.length;
+			str = '';
+			var j = 0, length2 = images2.localId.length;
+			var str2 = '';
+			var strsum = '';
+			images.serverId = [];
+			images2.serverId = [];
+			function upload() {
+				wx.uploadImage({
+					localId: images.localId[i],
+					success: function (res) {
+						i++;
+						images.serverId.push(res.serverId);
+						str = res.serverId;
+						if (i < length) {
+							upload();
+							return;
+						}
+						$("#pic").val(str);
+						//   $('#sss').click();
+					},
+					fail: function (res) {
+						alert(JSON.stringify(res));
+					}
+				});
+			}
+
+			function upload2() {
+				wx.uploadImage({
+					localId: images2.localId[j],
+					success: function (res) {
+						j++;
+						images2.serverId.push(res.serverId);
+						str2 = res.serverId;
+						strsum += str2 + '||';
+						if (j < length2) {
+							upload2();
+							return;
+						}
+						$("#pic2").val(strsum);
+						$('#sss').click();
+					},
+					fail: function (res) {
+						alert(JSON.stringify(res));
+					}
+				});
+			}
+
+			upload();
+			upload2();
+			$("#pic2").val(strsum);
+		};
+
+
+		setShareToFriend();
+		setShareToArea();
+	})
+</script>
+</body>
+</html>

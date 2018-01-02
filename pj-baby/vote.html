@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta http-equiv = "Content-Type" content = "text/html; charset=UTF-8">
+	<meta content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name = "viewport">
+	<meta content = "yes" name = "apple-mobile-web-app-capable">
+	<meta content = "black" name = "apple-mobile-web-app-status-bar-style">
+	<meta content = "telephone=no" name = "format-detection">
+	<meta charset = "utf-8">
+	<title>我来投票</title>
+	<link rel = "stylesheet" href = "css/style.css">
+	<script src = "js/jquery-1.10.2.min.js"></script>
+	<script src = "js/jquery.masonry.min.js"></script>
+	<script src = "js/app.js"></script>
+	<script src = "js/jquery.slides.min.js"></script>
+	<style type = "text/css">
+		#home-slides {
+			margin: 0 auto;
+		}
+
+		#home-slides .slidesjs-container {
+			width: auto;
+			height: auto;
+			overflow: hidden
+		}
+
+		#home-slides .slidesjs-container img {
+			width: 100%
+		}
+
+		#home-slides .slidesjs-pagination {
+			width: 100%;
+			height: 2px;
+			background: #d4d4d4
+		}
+
+		#home-slides .slidesjs-pagination li {
+			float: left
+		}
+
+		#home-slides .slidesjs-pagination a {
+			display: block;
+			height: 2px;
+			text-indent: -999em
+		}
+
+		#home-slides .slidesjs-pagination a.active {
+			background: #ffd200
+		}
+	</style>
+</head>
+<body>
+<div id = "show"
+     style = "width: 100%;height:100%;color:white;display:none;position:fixed;background-img:url(pic/logo.jpg);z-index:1008;background-size:100% 100%;">
+</div>
+<div id = "home-slides">
+	<p>
+		<a href = "javascript:;">
+			<img style = "width:100%;" src = "pic/logo.jpg" />
+		</a>
+	</p>
+</div>
+<section class = "content" id = "get_info">
+	<div class = "detial_box">
+		<span class = "closed close_detial_box" data-refer = "/active.php/mbb/index">&nbsp;</span>
+
+		<p class = "num clearfix">
+			<span class = "fl" id = "baby_info">3号&nbsp;拒绝了</span>
+			<span class = "fr">0票</span>
+		</p>
+
+		<div class = "blank10"></div>
+		<p>姓别：男</p>
+
+		<div class = "blank10"></div>
+		<p>年龄：看看</p>
+
+		<div class = "blank10"></div>
+		<p>参赛宣言：</p>
+
+		<div class = "blank10"></div>
+		<div style = "position: relative;">
+			<img src = "/uploads/mb/20150912/151612266130679330.jpg?v=1.1" />
+			<img src = "/uploads/mb/20150912/152114366385521211.jpg?v=1.2" /><br />
+			<img src = "/uploads/mb/20150912/1536683592823522.jpg?v=1.1" /><br />
+			<img src = "/uploads/mb/20150912/150111436271783176.jpg?v=1.1" /><br />
+		</div>
+	</div>
+	<div class = "blank10"></div>
+	<div class = "abtn_box">
+		<a href = "javascript:;" class = "a_btn toupiao vote" id = "vote" data-itid = "10389"
+		   style = "background: rgb(224,162,40);">我要投票</a>
+		<a href = "/active.php/mbb/bm" class = "a_btn look">我家宝贝也要参加</a>
+		<a href = "/active.php/mbb/index/order/ps" class = "a_btn look">返回主页面，查看投票情况</a>
+		<a href = "http://mp.weixin.qq.com/s?__biz=MjM5NjkwNzQ2NQ==&mid=207253351&idx=1&sn=3e7a32c95e13ad95d3578dc7e33fd87d#rd"
+		   class = "a_btn look">为我拉票</a>
+
+		<div id = "phpqrcode" class = "a_btn look" style = "display:none;">
+			<img src = "http://www.afeel.net/twoimg.html?mod=htmlvote&activity_id=30&id=10389"
+			     style = "margin:0 auto;" />
+		</div>
+	</div>
+</section>
+<section class = "rules">
+	<div class = "text">
+		<div style = "text-align: center;font-size:40px;"></div>
+		<a><span class = "prize">活动介绍：</span></a>
+
+		<p>
+			只要宝宝生活在上海，0-9岁，那就来参加“上海上海的第一届萌宝大赛”吧！<br /><br />
+
+			iwatch手表、LG手机照片打印机、拍立得、大白等你来抢！<br /><br />
+
+			还能让宝宝登上2016年萌宝台历，幸福一整年！<br /><br />
+
+			别忘了叫上亲朋好友，拿起手机投上一票，人气萌宝就是你！<br /><br />
+
+			刷票一经发现，一律取消资格
+		</p>
+
+		<a><span class = "prize">活动时间：</span></a>
+
+		<p>
+			活动时间：2015年6月17日-7月7日<br />
+			名单公布：2015年7月10日<br />
+			颁奖时间：2015年7月15日<br />
+		</p>
+
+		<a name = "awards"><span class = "prize">奖品设置：</span></a>
+
+		<p>
+			萌宝冠军奖品：<br />
+			iwatch+冠军奖杯+荣誉证书；<br /><br />
+
+			萌宝亚军奖品：<br />
+			LG手机照片打印机+亚军奖杯+荣誉证书；<br /><br />
+
+			萌宝季军奖品：<br />
+			富士趣奇mini8拍立得相机++季军奖杯+荣誉证书；<br /><br />
+
+			甜心宝贝（得票数第4-10名）奖品：<br />
+			大白玩偶+荣耀奖杯+荣誉证书；<br /><br />
+
+			人气宝贝：<br />
+			人气最高的前365位萌宝，均可获得印有宝宝头像的2016年萌宝台历一份。（制作周期较长，领取时间另行公布）<br /><br />
+
+			投票奖奖品：所有为参赛萌宝投票加油的网友，均有机会获得手机话费50元，每天限5名<br /><br />
+
+			特别提醒：根据活动参与情况，我们还将不断增加新的奖品。商家合作联系QQ1785508181<br /><br />
+		</p>
+
+		<a><span class = "prize">如何领奖：</span></a>
+
+		<p>
+			<font style = "color: blue;">
+				1、宝宝获奖后，需携带宝贝出生证明/宝宝身份证310开头，或家长在沪证明如居住证等（领奖信息须和后台填写资料一致）领奖。如无法出具，则取消资格<br />
+				2、奖品领奖须上门领奖（或者快递到付，限上海）<br />
+			</font>
+		</p>
+
+		<a><span class = "prize">报名方式：</span></a>
+
+		<p>
+			关注“上海上海”官方微信（shanghaishanghai021），回复“萌宝”参加活动。
+		</p>
+
+		<a><span class = "prize">参赛要求：</span></a>
+
+		<p>
+			1、参赛宝宝必须为生活在上海，0-9岁，上传日常真实照片，参赛资料中的家长姓名和联系方式必须真实有效，方便后期联系。<br />
+			2、请勿一人多号或一图多人参与，以上情况均以一人计算。<br />
+		</p>
+
+		<a name = "rule"><span class = "prize">投票规则:</span></a>
+
+		<p>
+			1、每位宝宝都有一个编号，可搜索编号或名字投票；<br />
+			2、关注微信：上海上海（shanghaishanghai021），每个微信号每天均可为宝宝投票一次；<br />
+			3、禁止刷票，一经发现取消获奖资格；<br />
+			<!--<font style="color: blue;font-size:20px;font-weight:900;">4、票数计算公式：<br />
+			有效总票数＝上海票数＊100%＋外地票数＊30%<br />
+			网页上的票数为投票数，不区分地区，待活动结束后，系统会按公式统一计算，并公布排行榜<br />
+			（所以就算你落后，你也有可能第一名）<br />
+			<br />
+			</font>-->
+			4、发现上海拥有本次活动的最终解释权。<br />
+		</p>
+	</div>
+</section>
+
+<script type = "text/javascript">
+	$(function () {
+		$(".close_detial_box").on('click', function () {
+			var refer = $(this).data('refer');
+			if (refer) {
+				window.history.go(-1);
+			} else {
+				window.location.href = "http://www.afeel.net/weixin/htmlvote.html?activity_id=30";
+			}
+		});
+
+	});
+</script>
+<section>
+	<div class = "pop" id = "voted" style = 'display:none;'>
+		<div class = "mengceng" style = "z-index:999;"></div>
+		<div class = "pop_up" style = 'z-index:99999;background-color: rgb(143,165,35);'>
+			<span class = "closed close_pop_up">&nbsp;</span>
+
+			<p class = "tit_txt" id = "content">投票的叔叔阿姨哥哥姐姐请在<br>上海上海公众号内回复：<span
+					style = "font-weight:bold;font-size:18px;color:yellow;">3</span></p>
+
+			<p class = "tit_txt" id = "dia_title">
+				<a href = "http://mp.weixin.qq.com/s?__biz=MjExMTExNDA2MQ==&mid=206405031&idx=1&sn=79b1ec10ba216b62c92d96e2fe4c9410#rd">
+					<!--<span style="display:inline-block;background:green;color:#fff;padding:3px 8px;border-radius:5px;">投票演示</span>&nbsp;&nbsp;&nbsp;-->
+					<a href = "http://mp.weixin.qq.com/s?__biz=MjM5NjkwNzQ2NQ==&mid=207227398&idx=1&sn=2c937a831bebc1dece49358bff7bea59#rd"><span
+							style = "display:inline-block;background:green;color:#fff;padding:3px 8px;border-radius:5px;">进入投票</span></a></a>
+			</p>
+
+			<p class = "tit_txt" id = "subcontent"></p></div>
+	</div>
+	<div class = "pop" id = "voting" style = "display:none;">
+		<div class = "mengceng"></div>
+		<div class = "pop_up"><span class = "closed close_pop_up">&nbsp;</span>
+
+			<p class = "tit_txt" id = "voting_content"></p></div>
+	</div>
+</section>
+<!--<script src = "http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>-->
+<!--<script type = "text/javascript" src = "/static/weixin/jweixin-1.0.0.js"></script>-->
+<script type = "text/javascript">
+	//huandeng
+	var slidesCount = $('#home-slides').children('p').length;
+	if (slidesCount > 1) {
+		$('#home-slides').slidesjs({
+			width: 320,
+			height: 148,
+			navigation: false,
+			play: {
+				interval: 3000,
+				auto: true
+			},
+			callback: {
+				loaded: function (number) {
+					var slidesCount = $('#home-slides .slidesjs-control').children().size(),
+							statusWidth = (parseFloat(1 / slidesCount) * 100) + '%';
+					$('#home-slides > .slidesjs-pagination > li').width(statusWidth);
+				}
+			}
+		});
+	}
+	else {
+
+
+	}
+	///////////////////////////
+	$(".vote").click(function () {
+		$("#voted").show();
+	});
+
+	$(".close_pop_up").on('click', function () {
+		$(this).parents(".pop").hide();
+	});
+	/*
+	 $("#tc").click(function(){
+	 $("#show").fadeIn(1000);
+	 return false;
+	 });
+	 $("body").click(function(){
+	 $("#show").fadeOut(1000);
+	 })*/
+
+
+	wx.config({
+		debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+		appId: 'wx2571cfcfb0a0f71f', // 必填，公众号的唯一标识
+		timestamp: 1443538813, // 必填，生成签名的时间戳
+		nonceStr: 'io53fvictil2o1a7', // 必填，生成签名的随机串
+		signature: '6eeefd08515849dc6ca69a1ff126efd8cb768a6f',// 必填，签名，见附录1
+		jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'chooseImage', 'uploadImage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+	});
+	var wxInfo = {
+		titleToFriend: '我是拒绝了，我要上2016年宝宝台历，叔叔阿姨投我一票吧…',
+		titleToArea: '我是拒绝了，我要上2016年宝宝台历，叔叔阿姨投我一票吧…',
+		descToFriend: '更多的福利，奖品，点击查询',
+		link: 'http://active.jx520.com.cn/active.php/mbb/detail/id/3',
+		imgUrl: 'http://active.jx520.com.cn/uploads/mb/20150912/151612266130679330.jpg'
+	}
+	var setShareToFriend = function () {
+		//分享给朋友
+		wx.onMenuShareAppMessage({
+			title: wxInfo.titleToFriend,
+			desc: wxInfo.descToFriend,
+			link: wxInfo.link,
+			imgUrl: wxInfo.imgUrl,
+			success: function (res) {
+			},
+			cancel: function (res) {
+			},
+			fail: function (res) {
+			}
+		});
+	}
+	var setShareToArea = function () {
+		//分享到朋友圈
+		wx.onMenuShareTimeline({
+			title: wxInfo.titleToArea,
+			link: wxInfo.link,
+			imgUrl: wxInfo.imgUrl,
+			success: function (res) {
+			},
+			cancel: function (res) {
+			},
+			fail: function (res) {
+			}
+		});
+	}
+	wx.ready(function () {
+
+		setShareToFriend();
+		setShareToArea();
+		/*
+		 wx.hideMenuItems({
+		 menuList: ['menuItem:share:qq','menuItem:share:weiboApp','menuItem:share:facebook','menuItem:share:QZone','menuItem:jsDebug','menuItem:editTag','menuItem:delete','menuItem:copyUrl','menuItem:originPage','menuItem:readMode','menuItem:openWithQQBrowser','menuItem:openWithSafari','menuItem:share:email','menuItem:share:brand'] // 要隐藏的菜单项，只能隐藏“传播类”和“保护类”按钮，所有menu项见附录3
+		 });
+		 */
+	});
+
+</script>
+</body>
+</html>

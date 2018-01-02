@@ -1,0 +1,274 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/**
+ * CONTENTS
+ *
+ *SETTINGS
+ *variables.......................变量集中存储文件
+ *mixin...........................集中存储mixin
+ *TOOLS
+ *
+ *COMPONENTS
+ *reset...........................Compass内置浏览器重置文件样式
+ *
+ *BUSINESS
+ *
+ *BASE
+ *screen..........................针对当前站点主页的样式修饰
+ *
+ */
+//mixins and variables set by author
+@import "variables", "mixin";
+//CSS reset from compass or normalize
+@import "compass/reset";
+//@import "normalize";
+//Page layout module.
+@import "compass/layout";
+//Provides cross browser CSS3 mixins that take advantage of available pre-spec vendor prefixes.
+@import "compass/css3";
+//Provides basic mixins for common typography patterns.
+@import "compass/typography";
+@import "compass/typography/lists";
+@import "compass/typography/text";
+//Provides basic mixins for common styling patterns.
+@import "compass/utilities/color";
+@import "compass/utilities/print";
+@import "compass/support";
+@import "icons";
+
+@include print-utilities(screen);
+// @debug brightness(#000);
+// @debug brightness(#ccc);
+// @debug brightness(#fff);
+//@debug browsers();
+//$supported-browsers: chrome;
+//$browser-minimum-versions: ("ie":"8");B0E0E6
+div {
+  appearance: button;
+  @include appearance("button");
+}
+
+.test-inline-block {
+  @include inline-block();
+}
+
+.test-opacity {
+  @include opacity(.3);
+}
+
+.stretch-full {
+  //@include stretch(5px,5px,5px,5px);
+  @include stretch($offset-top: 3px, $offset-bottom: 5px, $offset-left: 3px, $offset-right: 5px);
+}
+
+@include sticky-footer(30px, "#my-root");
+#my-root {
+  @include grid-background();
+}
+
+//table {
+//  $table-color: #666;
+//  @include table-scaffolding;
+//  @include inner-table-borders(1px, darken($table-color, 40%));
+//  @include outer-table-borders(2px);
+//  @include alternating-rows-and-columns($table-color,
+//          adjust-hue($table-color, -120deg), #222222);
+//}
+//
+//.rounded {
+//  @include border-radius(5px);
+//}
+//
+//.rounded-one {
+//  @include border-corner-radius(top, left, 5px);
+//}
+//主标题样式
+.headline {
+  font-family: $headline-ff;
+}
+
+//页面主题样式
+.main-sec {
+  font-family: $main-sec-ff;
+  @at-root {
+    .main-sec-headline {
+      font: {
+        family: $main-sec-ff;
+        size: 16px;
+      }
+    }
+
+    .main-sec-detail {
+      font-size: 12px;
+    }
+  }
+  //.headline {
+  //  font: {
+  //    family: $main-sec-ff;
+  //    size: 16px;
+  //  }
+  //}
+  //.detail {
+  //  font-size: 12px;
+  //}
+}
+
+//a {
+//  &:hover {
+//    color: #00b0e0;
+//  }
+//}
+p {
+  color: hsl(270, 100%, 50%);
+}
+
+#idf:first-child {
+
+}
+
+//@function
+.web-demo-sec {
+  @include col-sm();
+  //box-shadow: 1px 1px 3px 2px #cfcecf;
+  @include box-shadow(1px 1px 3px 2px #cfcecf);
+  &:hover {
+    background-color: #f5f5f5;
+  }
+}
+
+//.error .instrusion {
+//  background-color: #00b0e0;
+//}
+.error {
+  text-align: center;
+  color: #f00;
+  font-size: 20px;
+}
+
+.serious-error {
+  @extend .error;
+  border: 1px solid #f00;
+  font-family: $headline-ff;
+}
+
+a {
+  @include unstyled-link();
+  //@include link-colors(#00c,#0cc,#c0c,#ccc,#cc0);
+}
+
+.list-unstyle {
+  @include no-bullets();
+}
+
+.list-unstyle-li {
+  @include no-bullet();
+}
+
+.list-inline {
+  @include inline-list();
+}
+
+.list-horizontal {
+  @include horizontal-list(false);
+  //@include horizontal-list(0,right);
+}
+
+.list-inline-block {
+  @include inline-block-list(7px);
+}
+
+.text-force-wrap {
+  @include force-wrap();
+}
+
+.text-nowrap {
+  @include nowrap();
+}
+
+$use-mozilla-ellipsis-binding: true;
+.text-ellipsis {
+  @include ellipsis();
+}
+
+.text-hide {
+  //@include hide-text();
+  @include squish-text();
+}
+
+.btn-find {
+  @include replace-text("http:,,cdn.qq.com/images/find-btn.png");
+}
+
+// 16 * 1.5 24px
+$base-font-size: 16px;
+$base-line-height: 24px;
+@include establish-baseline();
+body {
+  @include debug-vertical-alignment();
+}
+
+h1 {
+  @include adjust-font-size-to(3em);
+  //@include adjust-font-size-to(48px);
+  //font-size: 3em; // 48/16=3
+  //line-height: 1.5em; // 72/48=1.5
+}
+
+h2 {
+  @include adjust-font-size-to(2.25em);
+  //@include adjust-font-size-to(36px);
+  //font-size: 2.25em; // 36/16=2.25
+  //line-height: 1.33333333em; // 48/36=1.333
+}
+
+h3 {
+  @include adjust-font-size-to(1.5em);
+  //@include adjust-font-size-to(24px);
+  //font-size: 1.5em; // 24/16=1.5
+  //line-height: 2em; // 48/24=2
+}
+
+h4 {
+  @include adjust-font-size-to(1.3125em);
+  //@include adjust-font-size-to(21px);
+  //font-size: 1.3125em; // 21/16=1.3125
+  //line-height: 2.28571em; // 48/21=2.28571
+}
+
+h5 {
+  @include adjust-font-size-to(1.125em);
+  //@include adjust-font-size-to(18px);
+  //font-size: 1.125em; // 18/16=1.125
+  //line-height: 1.33333333em; // 24/18=1.3333333
+}
+
+h6 {
+  @include adjust-font-size-to(1em);
+  //@include adjust-font-size-to(16px);
+  //font-size: 1em; // 16/16=1
+  //line-height: 1.5em; // 24/16=1.5
+}
+
+p {
+  @include adjust-font-size-to(1em);
+  //@include adjust-font-size-to(16px);
+  //font-size: 1em; // 16/16=1
+  //line-height: 1.5em; // 24/16=1.5
+  @include leader();
+  @include trailer();
+  //margin: 1.5em 0;
+}
+
+//DATA url
+.analyzer-logo {
+  /* cache buster */
+  //background-image: inline_image("run.png");
+  //background-image: url("../images/run.png?t=20151124");
+  background-image: image_url("logo/run.png");
+}
+
+#{append-selector("p,div,span",".bar")} {
+  color: #000;
+}

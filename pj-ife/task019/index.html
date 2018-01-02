@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK019</title>
+    <style>
+        .container {
+            height: 100px;
+        }
+
+        .wrapper {
+            position: relative;
+            float: left;
+            height: 100%;
+            width: 20px;
+            margin-right: 10px;
+        }
+
+        .square {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 20px;
+            height: 100%;
+            color: #fff;
+            background: #ff5763;
+        }
+    </style>
+    <script src="app.js"></script>
+</head>
+<body>
+<div>
+    <input id="number" type="number" placeholder="请输入10-100的数字">
+    <br/><br/>
+    <button onclick="leftInput();">左侧入</button>
+    <button onclick="rightInput();">右侧入</button>
+    <br/><br/>
+    <button onclick="leftRemove();">左侧出</button>
+    <button onclick="rightRemove()">右侧出</button>
+    <br/><br/>
+    <button onclick="bubbleSort();">冒泡排序</button>
+</div>
+<br/>
+<div id="content" class="container">
+    <div class="wrapper">
+        <div class="square" style="height: 20%"></div>
+    </div>
+    <div class="wrapper">
+        <div class="square" style="height: 50%"></div>
+    </div>
+    <div class="wrapper">
+        <div class="square" style="height: 90%"></div>
+    </div>
+    <div class="wrapper">
+        <div class="square" style="height: 30%"></div>
+    </div>
+    <div class="wrapper">
+        <div class="square" style="height: 80%"></div>
+    </div>
+    <div class="wrapper">
+        <div class="square" style="height: 60%"></div>
+    </div>
+    <div class="wrapper">
+        <div class="square" style="height: 10%"></div>
+    </div>
+</div>
+</body>
+</html>

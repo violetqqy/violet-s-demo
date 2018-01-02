@@ -1,0 +1,608 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import "compass/reset";
+@import "base";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: $black;
+}
+
+button:focus,
+button:active:focus,
+input:focus,
+input:active:focus,
+textarea:focus,
+textarea:active:focus {
+  outline: none;
+}
+
+.header {
+  position: relative;
+  min-width: 1280px;
+  height: 55px;
+  h1 {
+    margin-left: 60px;
+    padding-left: 42px;
+    line-height: 52px;
+    font-size: 22px;
+    font-weight: 700;
+    background: url(../img/icons/task_1_7_1_03.png) no-repeat left center;
+  }
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 52px;
+  line-height: 52px;
+  margin-right: 60px;
+  font-size: 15px;
+  color: $grey;
+  ul {
+    li {
+      display: inline-block;
+      padding: 0 18px;
+    }
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .nav-active {
+    color: $theme-color !important;
+    border-bottom: 3px $theme-color solid !important;
+  }
+  .login {
+    margin-left: 10px;
+    padding-left: 20px;
+    color: $theme-color;
+    background: url(../img/icons/task_1_7_1_06.png) no-repeat left center;
+  }
+}
+
+.ad-container {
+  position: relative;
+  min-width: 1280px;
+}
+
+.ad-back {
+  width: 100%;
+  height: 690px;
+  overflow: hidden;
+  background: #999 url(../img/task_1_7_1_02.png) no-repeat top center;
+  background-size: 100%;
+}
+
+.ad-content {
+  position: absolute;
+  top: 228px;
+  left: 125px;
+  color: $white;
+  line-height: 1.5;
+  h2 {
+    font-size: 60px;
+    font-weight: 700;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+  }
+  p {
+    font-size: 22px;
+    font-weight: 400;
+  }
+  .ad-btn {
+    margin-top: 60px;
+    button {
+      width: 330px;
+      height: 64px;
+      background: $theme-color;
+      color: $white;
+      font-weight: 200;
+      font-size: 32px;
+      border: none;
+    }
+  }
+}
+
+.ad-info {
+  width: 100%;
+  height: 250px;
+  ul {
+    li {
+      float: left;
+      width: 25%;
+      line-height: 1.5;
+      padding: 125px 0px;
+      font-size: 14px;
+      color: $grey;
+      text-align: center;
+    }
+  }
+  p {
+    width: 100%;
+    padding: 0 78px 15px;
+  }
+}
+
+.ad-right-border {
+  border-right: 2px $grey solid;
+}
+
+.ad-round {
+  background: url(../img/icons/task_1_7_1_13.png) no-repeat center 45px;
+}
+
+.ad-flag {
+  background: url(../img/icons/task_1_7_1_18.png) no-repeat center 45px;
+}
+
+.ad-flower {
+  background: url(../img/icons/task_1_7_1_20.png) no-repeat center 45px;
+}
+
+.ad-square {
+  background: url(../img/icons/task_1_7_1_15.png) no-repeat center 45px;
+}
+
+.search-container {
+  position: relative;
+  min-width: 1280px;
+  text-align: center;
+  h2 {
+    line-height: 3.8;
+    padding-top: 160px;
+    color: $grey;
+    font-size: 52px;
+    background: $input-back url(../img/icons/task_1_7_1_27.png) no-repeat center 87px;
+  }
+}
+
+.search-content {
+  width: 100%;
+  height: 340px;
+  background: #c09559 url(../img/task_1_7_1_04.png) no-repeat top center;
+  background-size: 100%;
+  color: $white;
+  h3 {
+    padding: 50px 0 10px;
+    font-size: 22px;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+  p {
+    font-size: 13px;
+  }
+}
+
+.search-btn-content {
+  margin: 50px 110px 0;
+  li {
+    float: left;
+    width: 265px;
+  }
+}
+
+.search-wrap {
+  width: 235px;
+  height: 36px;
+  margin: 0 15px;
+  border: none;
+}
+
+.search-input {
+  padding: 0 10px 0 15px;
+  color: $grey;
+  font-size: 14px;
+  background: $white url(../img/icons/task_1_7_1_31.png) no-repeat 206px center;
+}
+
+.search-btn {
+  background: $brown-theme-color;
+  color: $white;
+  letter-spacing: 15px;
+  font-size: 15px;
+}
+
+.ac-container {
+  height: 608px;
+  padding: 102px 128px 116px;
+  background: $dark-white;
+  ul {
+    li {
+      position: relative;
+      float: left;
+      width: 256px;
+      height: 390px;
+      padding: 0 19px;
+    }
+  }
+}
+
+.ac-bottom {
+  div {
+    width: 216px;
+    height: 336px;
+    padding: 10px 8px;
+    border: 1px $dark-white solid;
+    background: $white;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  h4 {
+    line-height: 2.6;
+    font-size: 15px;
+    color: $black;
+  }
+  p {
+    font-size: 13px;
+    color: $grey;
+  }
+}
+
+.ac-top {
+  div {
+    position: absolute;
+    left: 19px;
+    bottom: 0;
+    width: 216px;
+    height: 336px;
+    padding: 10px 8px;
+    border: 1px $dark-white solid;
+    background: $white;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  h4 {
+    font-size: 24px;
+    font-weight: 700;
+    text-indent: 24px;
+    letter-spacing: 24px;
+    color: $black;
+  }
+  p {
+    line-height: 2.6;
+    font-size: 13px;
+    color: $grey;
+  }
+}
+
+.news-container {
+  position: relative;
+  min-width: 1280px;
+  clear: both;
+}
+
+.news-wrap {
+  clear: both;
+}
+
+.news-left {
+  float: left;
+  width: 850px;
+  .news-herf {
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 522px;
+    text-align: center;
+    h3 {
+      line-height: 1.5;
+      font-size: 24px;
+      padding-top: 170px;
+    }
+    p {
+      line-height: 2.5;
+    }
+    button {
+      width: 170px;
+      height: 43px;
+      font-size: 20px;
+      border: none;
+      margin-top: 10px;
+    }
+  }
+  .news-light-text {
+    color: $white;
+  }
+  .news-light-btn {
+    color: $white;
+    background: $theme-color;
+    border: 1px $white solid !important;
+  }
+  .news-dark-text {
+    color: $grey;
+  }
+  .news-dark-btn {
+    color: $theme-color;
+    background: $white;
+    border: 1px $theme-color solid !important;
+  }
+  .news-herf:first-child {
+    background: $theme-color;
+  }
+}
+
+.news-left-title {
+  width: 100%;
+  height: 566px;
+  text-align: center;
+  background: #6e4f43 url(../img/task_1_7_1_21.png) no-repeat top center;
+  background-size: 100%;
+  color: $white;
+  h2 {
+    font-size: 48px;
+    padding-top: 130px;
+  }
+  .news-title {
+    font-size: 150px;
+    font-family: "Times New Roman", Times, serif;
+  }
+  p {
+    font-size: 22px;
+    margin-top: 15px;
+  }
+}
+
+.news-right {
+  float: left;
+  width: 430px;
+}
+
+.news-right-content {
+  position: relative;
+  width: 100%;
+  height: 566px;
+  text-align: center;
+  h3 {
+    padding-top: 166px;
+    font-size: 24px;
+  }
+  .news-text {
+    color: $theme-color;
+  }
+  p {
+    line-height: 2;
+    padding: 20px 70px;
+    font-size: 14px;
+    color: $grey;
+  }
+  button {
+    width: 106px;
+    height: 33px;
+    background: $white;
+    border: 1px $theme-color solid;
+    color: $theme-color;
+    font-size: 14px;
+    margin: 30px 0;
+  }
+}
+
+.news-right-img {
+  width: 100%;
+  height: 522px;
+  background: #927216 url(../img/task_1_7_1_24.png) no-repeat top center;
+  background-size: 100%;
+}
+
+.news-right-triangle {
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-right: 30px solid $white;
+  border-bottom: 15px solid transparent;
+  margin-top: -15px;
+}
+
+.news-left-triangle {
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-left: 30px solid $white;
+  border-bottom: 15px solid transparent;
+  margin-top: -15px;
+}
+
+.voluteer-container {
+  clear: both;
+  min-width: 1280px;
+  text-align: center;
+}
+
+.voluteer-wrap {
+  margin: 0 140px;
+  padding-top: 116px;
+  h2 {
+    line-height: 2;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  p {
+    line-height: 1.5;
+    font-size: 14px;
+    color: $grey;
+  }
+}
+
+.voluteer-description {
+  float: left;
+  width: 340px;
+  height: 285px;
+  margin-top: 105px;
+  margin-bottom: 166px;
+  padding-right: 50px;
+  text-align: left;
+}
+
+.voluteer-content {
+  line-height: 1.5;
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+    padding-bottom: 24px;
+  }
+  p {
+    font-size: 12px;
+    color: $grey;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin-bottom: 12px;
+  }
+  span {
+    display: block;
+    text-align: right;
+    font-size: 11px;
+    background: url(../img/icons/task_1_7_1_45.png) no-repeat 245px center;
+  }
+}
+
+.voluteer-info-input {
+  float: left;
+  width: 660px;
+  height: 285px;
+  margin-top: 105px;
+  margin-bottom: 166px;
+  input {
+    float: left;
+    display: block;
+    width: 310px;
+    height: 40px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    background: $input-back;
+    padding: 0 18px;
+    border: none;
+  }
+  textarea {
+    display: block;
+    width: 640px;
+    height: 120px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    background: $input-back;
+    padding: 10px 18px;
+    border: none;
+    resize: none;
+  }
+  button {
+    display: block;
+    width: 640px;
+    height: 40px;
+    margin-left: 20px;
+    background: $input-back;
+    border: none;
+  }
+}
+
+.contact-container {
+  clear: both;
+  min-width: 1280px;
+  height: 359px;
+  line-height: 1.5;
+  background: $light-black;
+  padding-top: 90px;
+  color: $white;
+  text-align: center;
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  p {
+    font-size: 13px;
+  }
+}
+
+.contact-content {
+  position: relative;
+  width: 512px;
+  margin-left: 384px;
+  padding: 28px 0px;
+}
+
+.contact-input {
+  width: 432px;
+  height: 42px;
+  input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 0 18px;
+  }
+}
+
+.contact-btn {
+  position: absolute;
+  top: 28px;
+  right: 0;
+  width: 80px;
+  height: 42px;
+  button {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-size: 15px;
+    letter-spacing: 5px;
+    color: $white;
+    background: $grey;
+  }
+}
+
+.contact-icon {
+  img {
+    margin: 0 15px;
+  }
+}
+
+.footer {
+  position: relative;
+  min-width: 1280px;
+  height: 58px;
+  background: $dark-black;
+  color: $white;
+  font-size: 12px;
+}
+
+.copyright {
+  margin-left: 100px;
+  line-height: 58px;
+}
+
+.to-top {
+  position: absolute;
+  right: 40px;
+  top: 0;
+  display: block;
+  line-height: 58px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.hide-head {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}

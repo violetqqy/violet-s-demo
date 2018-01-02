@@ -1,0 +1,30 @@
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #eeeeee;
+    margin: 0px auto;
+    width: 80%;
+}
+
+.container {
+    -webkit-column-width: 200px;
+    -moz-column-width: 200px;
+    column-width: 200px;
+    -webkit-column-gap: 5px;
+    -moz-column-gap: 5px;
+    column-gap: 5px;
+}
+
+.container img {
+    margin: 5px 0;
+    width: 180px;
+    height: inherit;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 10px solid white;
+}
