@@ -1,0 +1,79 @@
+.app-volunteer {
+  padding: 80px 0;
+  text-align: center;
+  h3 {
+    line-height: 2;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  p {
+    line-height: 1.5;
+    font-size: 12px;
+    color: #999;
+  }
+}
+
+.app-vol-container {
+  padding: 0 100px;
+  margin-bottom: 100px;
+  ul {
+    padding-right: 50px;
+  }
+  li {
+    position: relative;
+    height: 90px;
+    overflow: hidden;
+  }
+  h4 {
+    font-size: 14px;
+    font-weight: 700;
+    padding-bottom: 10px;
+  }
+  p {
+    font-size: 12px;
+    color: #999;
+    line-height: 1.75;
+    height: 42px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .more {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: none;
+    padding-left: 12px;
+    background: url('../img/icons/task_1_7_1_45.png') no-repeat left center #fff;
+    background-size: 8px;
+    color: #999;
+    font-size: 12px;
+  }
+}
+
+.app-volunteer-form {
+  .form-field {
+    >div {
+      padding: 0 0 10px 10px;
+    }
+    width: 100%;
+    input,
+    textarea,
+    button {
+      display: block;
+      width: 100%;
+      color: #666;
+      background: #efefef;
+      border: none;
+      height: 34px;
+      padding: 0 10px;
+    }
+    textarea {
+      height: 130px;
+      padding: 10px;
+      resize: none;
+    }
+  }
+}

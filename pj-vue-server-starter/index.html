@@ -1,0 +1,85 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>摇一摇</title>
+  <script src="/assets/vue.js"></script>
+  <link rel="stylesheet" href="/assets/app.css">
+</head>
+
+<body class="bg">
+  <div id="app"></div>
+  <!-- <input type="text" name="txt" id="txt" value="0" />次 -->
+  <audio id="audio" controls="controls" style="opacity: 0;pointer-events: none">
+    <source src="assets/shake_sound.mp3" type="audio/mp3" />
+    <!-- <source src="http://ocg8s5zv8.bkt.clouddn.com/shake_sound.mp3" type="audio/mp3" /> -->
+  </audio>
+  <button id="play" onclick="play()">播放</button>
+  <script src="/assets/app.js"></script>
+  <script>
+    app.$mount('#app')
+  </script>
+  <script>
+    var audio = document.getElementById("audio");
+    function play(){
+      audio.play();
+    }
+
+  </script>
+  <script>
+    init();
+    var SHAKE_THRESHOLD = 3000; //定义一个摇动的值
+    var last_update = 0; //定义一个变量保存上次更新的时间
+
+    var x = y = z = last_x = last_y = last_z = 0; //定义xyz记录三个轴的数据以及上一次出发的时间
+    function init() {
+      if (window.DeviceMotionEvent) {
+        window.addEventListener('devicemotion', deviceMotionHandler, false);
+      } else {
+        alert('not support mobile event');
+      }
+    }
+
+    function deviceMotionHandler(eventData) {
+      var meda01 = document.getElementById('musicBox');
+      var acceleration = eventData.accelerationIncludingGravity; //含重力加速度
+      var curTime = new Date().getTime(); //获取当前时间
+      if ((curTime - last_update) > 100) { //curTime - last_update 是固定时间段
+        var diffTime = curTime - last_update;
+        last_update = curTime;
+        //alert('last_update='+last_update)
+        x = acceleration.x;
+        //alert('x='+x)
+        y = acceleration.y;
+        //alert('y='+y)
+        z = acceleration.z;
+        //alert('z='+z)
+        var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;
+        //alert('speed='+speed)  abs是取绝对值
+        if (speed > SHAKE_THRESHOLD) {
+          alert("摇动了+中大奖了，就是不知道有没有声音");
+          // media.setAttribute("src", "swiper/music/default.mp3");
+          //setAttribute  锁定元素。此方法不能通过document对象调用，只能通过元素节点对象调用他
+          //例如，你可以把他与getElementByTagName()方法结合起来，去查询每个<p>元素的title属性
+          //var txt=document.getElementsByTagName('p')
+          //for(var i=0;i<text.length;i++){
+          //alert(txt[i].getAttribute('title'))
+          //}
+          //
+          //
+          //
+          //
+          media.load();
+          media.play();
+          meda01.play();
+        }
+        last_x = x;
+        last_y = y;
+        last_z = z;
+      }
+    }
+  </script>
+</body>
+
+</html>

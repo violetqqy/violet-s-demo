@@ -3,16 +3,16 @@
  */
 
 var gulp = require('gulp'),
-    connect = require('gulp-connect'),
+    // connect = require('gulp-connect'),
 //sass = require('gulp-sass'),
     compass = require('gulp-compass'),
     minifyCSS = require('gulp-minify-css');
 
-gulp.task('server', function () {
-    connect.server({
-        port: 5000,
-    });
-});
+// gulp.task('server', function () {
+//     connect.server({
+//         port: 5000,
+//     });
+// });
 
 //gulp.task('sass', function () {
 //    gulp.src('./**/sass/*.scss')
@@ -43,4 +43,4 @@ gulp.task('watch', function () {
     gulp.watch('./sass/*.scss', ['compass']);
 });
 
-gulp.task('default', ['server', 'compass', 'watch']);
+gulp.task('default', ['compass', 'watch']);

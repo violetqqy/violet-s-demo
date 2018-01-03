@@ -1,0 +1,13 @@
+@import 'variables';
+body {
+  background: url(images/bg.png) no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  color: $yellow;
+}
+
+h2 {
+  color: $blue;
+}

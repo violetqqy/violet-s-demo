@@ -1,0 +1,55 @@
+.app-toolbar {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 50px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.24);
+}
+
+.app-logo {
+  display: inline-block;
+  background: url(../img/icons/task_1_7_1_03.png) no-repeat left center;
+  background-size: 26px;
+  padding-left: 35px;
+  h1 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+.app-nav {
+  li {
+    display: inline-block;
+  }
+  a {
+    height: 49px;
+    padding: 0 10px;
+    display: inline-block;
+    font-size: 14px;
+    color: #999;
+    text-decoration: none;
+  }
+  a.active {
+    color: #e74f4d;
+    border-bottom: 2px solid #e74f4d;
+  }
+}
+
+.app-nav-margin {
+  margin-right: 80px;
+}
+
+.app-log {
+  position: absolute;
+  top: 0;
+  right: 50px;
+  button {
+    display: inline-block;
+    border: none;
+    background: url('../img/icons/task_1_7_1_06.png') no-repeat left center;
+    background-size: 14px;
+    padding-left: 24px;
+    color: #e74f4d;
+    font-size: 14px;
+  }
+}

@@ -11,7 +11,7 @@
 
   } @else {
     @warn "$width应该是一个百分值，你输入的$width是:#{$width}.";
-    $width:percentage($width);
+    $width: percentage($width);
   }
 
   //大于768

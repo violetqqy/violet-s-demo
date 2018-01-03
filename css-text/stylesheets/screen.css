@@ -92,12 +92,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .print-only {
   display: none;
 }
+
 div {
   appearance: button;
   -moz-appearance: button;
   -webkit-appearance: button;
 }
-
 
 .test-inline-block {
   display: inline-block;
@@ -368,7 +368,7 @@ p {
 
 .analyzer-logo {
   /* cache buster */
-  background-image: url('../images/logo/run.png?1440056090');
+  background-image: url('../images/logo/run.png?1509417827');
 }
 
 p.bar, div.bar, span.bar {
