@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Debounce</title>
+  <style>
+    .content {
+      width: 100%;
+      height: 300px;
+      background: yellow;
+      margin-bottom: 20px;
+    }
+
+  </style>
+  <script src="debounce.js"></script>
+</head>
+
+<body>
+  <div id="main" class="content"></div>
+  <div id="main1" class="content">1</div>
+  <script>
+    var i = 0;
+    var j = 0;
+    document.getElementById('main').addEventListener('mousemove',
+      debounce(
+        function(event) {
+          console.log(i++);
+          console.log(event);
+        }, 2000)
+    );
+    document.getElementById('main1').addEventListener('mousemove',
+      // debounce(
+      function() {
+        console.log(j--);
+      }
+      // 100)
+    );
+
+  </script>
+</body>
+
+</html>
