@@ -12,15 +12,15 @@ function Override(label) {
         });
     };
 }
-var Test = (function () {
+var Test = /** @class */ (function () {
     function Test() {
         this.name = 'pat';
     }
     __decorate([
-        Override('test')
-    ], Test.prototype, "name");
+        Override('test') // invokes Override, which returns the decorator
+    ], Test.prototype, "name", void 0);
     return Test;
-})();
+}());
 var t = new Test();
 console.log(t.name); // 'test'
 /*function ReadOnly(target: any, key: string) {
@@ -35,3 +35,4 @@ class Test {
 const t = new Test();
 t.name = 'jan';
 console.log(t.name); // 'undefined'*/ 
+//# sourceMappingURL=property-decorators.js.map

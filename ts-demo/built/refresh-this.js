@@ -10,3 +10,4 @@ function someMethod() {
 }
 myObject.someMethod();
 someMethod();
+//# sourceMappingURL=refresh-this.js.map

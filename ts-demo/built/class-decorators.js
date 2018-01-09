@@ -20,7 +20,7 @@ function log(prefix) {
         var f = function () {
             var args = [];
             for (var _i = 0; _i < arguments.length; _i++) {
-                args[_i - 0] = arguments[_i];
+                args[_i] = arguments[_i];
             }
             console.log(prefix + original.name);
             return construct(original, args);
@@ -31,12 +31,13 @@ function log(prefix) {
         return f;
     };
 }
-var World = (function () {
+var World = /** @class */ (function () {
     function World() {
     }
     World = __decorate([
         log('hello')
     ], World);
     return World;
-})();
+}());
 var w = new World(); // outputs "helloWorld"
+//# sourceMappingURL=class-decorators.js.map

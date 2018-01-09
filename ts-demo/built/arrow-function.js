@@ -1,4 +1,4 @@
-var Toppings = (function () {
+var Toppings = /** @class */ (function () {
     function Toppings(toppings) {
         this.toppings = Array.isArray(toppings) ? toppings : [];
     }
@@ -11,6 +11,7 @@ var Toppings = (function () {
             .forEach(function (topping, i) { return console.log(topping, i + '/' + _this.toppings.length); }); // `this` works
     };
     return Toppings;
-})();
+}());
 var ctrl = new Toppings(['cheese', 'letture']);
 ctrl.outputList();
+//# sourceMappingURL=arrow-function.js.map

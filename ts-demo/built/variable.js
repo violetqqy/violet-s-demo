@@ -30,7 +30,11 @@ for (var x = 0; x < 5; x++) {
  * result: 1 2 3 4 5
  */
 (function () {
-    for (var y = 0; y < 5; y++) {
+    var _loop_1 = function (y) {
         setTimeout(function () { return console.log(y); }, 0);
+    };
+    for (var y = 0; y < 5; y++) {
+        _loop_1(y);
     }
 })();
+//# sourceMappingURL=variable.js.map
