@@ -1,0 +1,35 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#pics {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: space-between;
+}
+
+#pics img {
+  display: inline-block;
+  position: relative;
+  width: 25%;
+  padding: 16px;
+}
+
+#pics img.error::after {
+  content: "啊哦~图片加载失败了！";
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+}
