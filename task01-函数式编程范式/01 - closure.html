@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // ---------------------------------
+    // 闭包——案例
+    // Math.pow(4, 2)
+    // Math.pow(5, 2)
+
+    function makePower(power) {
+      return function(number) {
+        return Math.pow(number, power)
+      }
+    }
+
+    // 求平方
+    let makePower2 = makePower(2)
+    // 求3次方
+    let makePower3 = makePower(3)
+
+    console.log(makePower2(4))
+    console.log(makePower2(5))
+    console.log(makePower3(5))
+  </script>
+</body>
+</html>
