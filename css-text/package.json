@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/candyqqy/mytest",
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-compass": "^2.1.0",
     "gulp-connect": "^5.1.0",
     "gulp-minify-css": "^1.2.4"
